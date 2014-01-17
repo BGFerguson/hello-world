@@ -1,0 +1,553 @@
+Fun and games - git or get
+
+Transcript of learning commands to create this project
+
+bash-3.1$ git clone https://github.com/BGFerguson/hello-world.git
+Cloning into 'hello-world'...
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+bash-3.1$ ls
+hello-world
+bash-3.1$ cd hello-world/
+bash-3.1$ git status
+# On branch master
+nothing to commit, working directory clean
+bash-3.1$ ls
+README.md
+bash-3.1$ more README.md
+bash: more: command not found
+bash-3.1$ less README.md
+bash-3.1$
+bash-3.1$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       .idea/
+#       ear/
+#       ejbs/
+#       hello-world.iml
+#       pom.xml
+#       primary-source/
+#       projects/
+#       servlets/
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.1$ pwd
+/c/Projects-Personal/hello-world
+bash-3.1$ git add *.c
+fatal: pathspec '*.c' did not match any files
+bash-3.1$ git add help
+fatal: pathspec 'help' did not match any files
+bash-3.1$ git help add
+Launching default browser to display HTML ...
+bash-3.1$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+bash-3.1$ git add .
+bash-3.1$ ll
+bash: ll: command not found
+bash-3.1$ ls
+README.md  ear  ejbs  hello-world.iml  pom.xml  primary-source  projects  servlets  src
+bash-3.1$ get status
+bash: get: command not found
+bash-3.1$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   .idea/.name
+#       new file:   .idea/compiler.xml
+#       new file:   .idea/copyright/profiles_settings.xml
+#       new file:   .idea/encodings.xml
+#       new file:   .idea/misc.xml
+#       new file:   .idea/modules.xml
+#       new file:   .idea/scopes/scope_settings.xml
+#       new file:   .idea/vcs.xml
+#       new file:   .idea/workspace.xml
+#       new file:   ear/pom.xml
+#       new file:   ejbs/pom.xml
+#       new file:   ejbs/src/main/resources/META-INF/ejb-jar.xml
+#       new file:   hello-world.iml
+#       new file:   pom.xml
+#       new file:   primary-source/pom.xml
+#       new file:   projects/logging/pom.xml
+#       new file:   projects/pom.xml
+#       new file:   servlets/pom.xml
+#       new file:   servlets/servlet/pom.xml
+#       new file:   servlets/servlet/src/main/webapp/WEB-INF/web.xml
+#       new file:   servlets/servlet/src/main/webapp/index.jsp
+#
+bash-3.1$ git --?
+Unknown option: --?
+usage: git [--version] [--help] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+bash-3.1$ git reset HEAD
+bash-3.1$ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       .idea/
+#       ear/
+#       ejbs/
+#       hello-world.iml
+#       pom.xml
+#       primary-source/
+#       projects/
+#       servlets/
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.1$ git add .
+bash-3.1$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   .gitignore
+#       new file:   New Text Document.txt
+#       new file:   ear/pom.xml
+#       new file:   ejbs/pom.xml
+#       new file:   ejbs/src/main/resources/META-INF/ejb-jar.xml
+#       new file:   pom.xml
+#       new file:   primary-source/pom.xml
+#       new file:   projects/logging/pom.xml
+#       new file:   projects/pom.xml
+#       new file:   servlets/pom.xml
+#       new file:   servlets/servlet/pom.xml
+#       new file:   servlets/servlet/src/main/webapp/WEB-INF/web.xml
+#       new file:   servlets/servlet/src/main/webapp/index.jsp
+#
+bash-3.1$ git commit -m "First Create"
+[master 8ba4611] First Create
+ 13 files changed, 259 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 New Text Document.txt
+ create mode 100644 ear/pom.xml
+ create mode 100644 ejbs/pom.xml
+ create mode 100644 ejbs/src/main/resources/META-INF/ejb-jar.xml
+ create mode 100644 pom.xml
+ create mode 100644 primary-source/pom.xml
+ create mode 100644 projects/logging/pom.xml
+ create mode 100644 projects/pom.xml
+ create mode 100644 servlets/pom.xml
+ create mode 100644 servlets/servlet/pom.xml
+ create mode 100644 servlets/servlet/src/main/webapp/WEB-INF/web.xml
+ create mode 100644 servlets/servlet/src/main/webapp/index.jsp
+bash-3.1$ ls
+New Text Document.txt  README.md  ear  ejbs  hello-world.iml  pom.xml  primary-source  projects  servlets  src
+bash-3.1$ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+bash-3.1$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': BGFerguson
+Password for 'https://BGFerguson@github.com':
+Counting objects: 29, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (28/28), 3.05 KiB | 0 bytes/s, done.
+Total 28 (delta 5), reused 0 (delta 0)
+To https://github.com/BGFerguson/hello-world.git
+   4e3fd96..8ba4611  master -> master
+bash-3.1$ git status
+# On branch master
+nothing to commit, working directory clean
+bash-3.1$ git branch
+* master
+bash-3.1$ git checkout -t -b branch-one
+Branch branch-one set up to track local branch master.
+Switched to a new branch 'branch-one'
+bash-3.1$ git status
+# On branch branch-one
+nothing to commit, working directory clean
+bash-3.1$ git branch
+* branch-one
+  master
+bash-3.1$ git branch -vv
+* branch-one 8ba4611 [master] First Create
+  master     8ba4611 [origin/master] First Create
+bash-3.1$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Everything up-to-date
+bash-3.1$ git push origin branch-one
+Username for 'https://github.com': BGFerguson
+Password for 'https://BGFerguson@github.com':
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/BGFerguson/hello-world.git
+ * [new branch]      branch-one -> branch-one
+bash-3.1$ git branch -vv
+* branch-one 8ba4611 [master] First Create
+  master     8ba4611 [origin/master] First Create
+bash-3.1$ git push origin --delete branch-one
+bash-3.1$ git push origin --delete branch-one
+Username for 'https://github.com': BGFerguson
+Password for 'https://BGFerguson@github.com':
+To https://github.com/BGFerguson/hello-world.git
+ - [deleted]         branch-one
+bash-3.1$ git branch -vv
+* branch-one 8ba4611 [master] First Create
+  master     8ba4611 [origin/master] First Create
+bash-3.1$ git checkout master
+Switched to branch 'master'
+bash-3.1$ git branch -vv
+  branch-one 8ba4611 [master] First Create
+* master     8ba4611 [origin/master] First Create
+bash-3.1$ git branch -d branch-one
+Deleted branch branch-one (was 8ba4611).
+bash-3.1$ git branch
+* master
+bash-3.1$ git checkout -b branch-two
+Switched to a new branch 'branch-two'
+bash-3.1$ git branch -vv
+* branch-two 8ba4611 First Create
+  master     8ba4611 [origin/master] First Create
+bash-3.1$ git push origin branch-two
+Username for 'https://github.com': BGFerguson
+Password for 'https://BGFerguson@github.com':
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/BGFerguson/hello-world.git
+ * [new branch]      branch-two -> branch-two
+bash-3.1$ git branch -vv
+* branch-two 8ba4611 First Create
+  master     8ba4611 [origin/master] First Create
+bash-3.1$ git branch --set-upstream-to=origin/branch-two
+Branch branch-two set up to track remote branch branch-two from origin.
+bash-3.1$ git branch -vv
+* branch-two 8ba4611 [origin/branch-two] First Create
+  master     8ba4611 [origin/master] First Create
+bash-3.1$
+bash-3.1$
+bash-3.1$ git status
+# On branch branch-two
+nothing to commit, working directory clean
+bash-3.1$ git checkout master
+Switched to branch 'master'
+bash-3.1$ git branch -vv
+  branch-two 8ba4611 [origin/branch-two] First Create
+* master     8ba4611 [origin/master] First Create
+bash-3.1$ git checkout -t -b branch-three origin/branch-three
+fatal: Cannot update paths and switch to branch 'branch-three' at the same time.
+Did you intend to checkout 'origin/branch-three' which can not be resolved as commit?
+bash-3.1$ git branch -u branch-three
+error: the requested upstream branch 'branch-three' does not exist
+hint:
+hint: If you are planning on basing your work on an upstream
+hint: branch that already exists at the remote, you may need to
+hint: run "git fetch" to retrieve it.
+hint:
+hint: If you are planning to push out a new local branch that
+hint: will track its remote counterpart, you may want to use
+hint: "git push -u" to set the upstream config as you push.
+bash-3.1$ git checkout branch-two
+Switched to branch 'branch-two'
+bash-3.1$ ls
+New Text Document.txt  README.md  ear  ejbs  hello-world.iml  pom.xml  primary-source  projects  servlets  src
+bash-3.1$ git status
+# On branch branch-two
+nothing to commit, working directory clean
+bash-3.1$ git status
+# On branch branch-two
+nothing to commit, working directory clean
+bash-3.1$ git branch -vv
+* branch-two 8ba4611 [origin/branch-two] First Create
+  master     8ba4611 [origin/master] First Create
+bash-3.1$ git checkout -b branch-three
+Switched to a new branch 'branch-three'
+bash-3.1$ git status
+# On branch branch-three
+nothing to commit, working directory clean
+bash-3.1$ git branch -vv
+* branch-three 8ba4611 First Create
+  branch-two   8ba4611 [origin/branch-two] First Create
+  master       8ba4611 [origin/master] First Create
+bash-3.1$ git status
+# On branch branch-three
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   pom.xml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.1$ git add .
+bash-3.1$ git status
+# On branch branch-three
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   pom.xml
+#
+bash-3.1$ ls
+New Text Document.txt  README.md  ear  ejbs  hello-world.iml  pom.xml  primary-source  projects  servlets  src
+bash-3.1$ git commit -m "pom 1.1"
+[branch-three bd1f822] pom 1.1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.1$ git checkout master
+Switched to branch 'master'
+bash-3.1$ get status
+bash: get: command not found
+bash-3.1$ git status
+# On branch master
+nothing to commit, working directory clean
+bash-3.1$ git merge --no-ff branch-three
+Merge made by the 'recursive' strategy.
+ pom.xml | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.1$ git log
+commit 8e3af1ce6b16779e5b687c8dbaeedf78603e1175
+Merge: 8ba4611 bd1f822
+Author: Bruce Ferguson <bruce.ferguson@iop.org>
+Date:   Fri Jan 17 15:16:08 2014 +0000
+
+    Merge branch 'branch-three'
+
+commit bd1f822d21ef0479e837abfdb6a38fcdb07e318d
+Author: Bruce Ferguson <bruce.ferguson@iop.org>
+Date:   Fri Jan 17 15:14:15 2014 +0000
+
+    pom 1.1
+
+commit 8ba461127e489b6a62d7c8b04647ce739beb51c0
+Author: Bruce Ferguson <bruce.ferguson@iop.org>
+Date:   Fri Jan 17 14:45:37 2014 +0000
+
+    First Create
+
+commit 4e3fd962231cff388be65a872d671eec1d929ce6
+Author: Bruce Ferguson <bruce.ferguson@iop.org>
+Date:   Fri Jan 17 05:28:28 2014 -0800
+
+    Initial commit
+bash-3.1$ git checkout branch-two
+Switched to branch 'branch-two'
+bash-3.1$ git status
+# On branch branch-two
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   pom.xml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.1$ git add .
+bash-3.1$ git status
+# On branch branch-two
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   pom.xml
+#
+bash-3.1$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+        pom.xml
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+bash-3.1$ git commit -m "new pom2"
+[branch-two b26bb54] new pom2
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.1$ git status
+# On branch branch-two
+# Your branch is ahead of 'origin/branch-two' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+bash-3.1$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+bash-3.1$ git checkout branch-two
+Switched to branch 'branch-two'
+Your branch is ahead of 'origin/branch-two' by 1 commit.
+  (use "git push" to publish your local commits)
+bash-3.1$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': BGFerguson
+Password for 'https://BGFerguson@github.com':
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 575 bytes | 0 bytes/s, done.
+Total 7 (delta 6), reused 0 (delta 0)
+To https://github.com/BGFerguson/hello-world.git
+   8ba4611..b26bb54  branch-two -> branch-two
+   8ba4611..8e3af1c  master -> master
+bash-3.1$ git checkout master
+Switched to branch 'master'
+bash-3.1$ git status
+# On branch master
+nothing to commit, working directory clean
+bash-3.1$ git status -vv
+# On branch master
+nothing to commit, working directory clean
+bash-3.1$ git branch -vv
+  branch-three bd1f822 pom 1.1
+  branch-two   b26bb54 [origin/branch-two] new pom2
+* master       8e3af1c [origin/master] Merge branch 'branch-three'
+bash-3.1$ git merge --no-ff branch-two
+Auto-merging pom.xml
+CONFLICT (content): Merge conflict in pom.xml
+Automatic merge failed; fix conflicts and then commit the result.
+bash-3.1$ git status
+# On branch master
+# You have unmerged paths.
+#   (fix conflicts and run "git commit")
+#
+# Unmerged paths:
+#   (use "git add <file>..." to mark resolution)
+#
+#       both modified:      pom.xml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.1$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+bash-3.1$ git add .
+bash-3.1$ #git commit -m
+bash-3.1$ git commit -m "resolved conflict"
+[master 5689ae4] resolved conflict
+bash-3.1$ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 2 commits.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+bash-3.1$ git branch -vv
+  branch-three bd1f822 pom 1.1
+  branch-two   b26bb54 [origin/branch-two] new pom2
+* master       5689ae4 [origin/master: ahead 2] resolved conflict
+bash-3.1$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': BGFerguson
+Password for 'https://BGFerguson@github.com':
+Counting objects: 1, done.
+Writing objects: 100% (1/1), 219 bytes | 0 bytes/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/BGFerguson/hello-world.git
+   8e3af1c..5689ae4  master -> master
+bash-3.1$ git checkout branch-two
+Switched to branch 'branch-two'
+bash-3.1$ git checkout master
+M       pom.xml
+Switched to branch 'master'
+bash-3.1$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       modified:   pom.xml
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.1$ git add .
+bash-3.1$ git commit
+Aborting commit due to empty commit message.
+bash-3.1$ git commit -m "master pom 1.3"
+[master 4a3f18e] master pom 1.3
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.1$ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+bash-3.1$ git checkout branch-two
+Switched to branch 'branch-two'
+bash-3.1$ git add .
+bash-3.1$ git commit -m "ticket games"
+[branch-two 844ce04] ticket games
+ 1 file changed, 1 insertion(+)
+bash-3.1$ git branch -vv
+  branch-three bd1f822 pom 1.1
+* branch-two   844ce04 [origin/branch-two: ahead 1] ticket games
+  master       4a3f18e [origin/master: ahead 1] master pom 1.3
+bash-3.1$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': BGFerguson
+Password for 'https://BGFerguson@github.com':
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 543 bytes | 0 bytes/s, done.
+Total 6 (delta 3), reused 0 (delta 0)
+To https://github.com/BGFerguson/hello-world.git
+   b26bb54..844ce04  branch-two -> branch-two
+   5689ae4..4a3f18e  master -> master
+bash-3.1$ git branch -vv
+  branch-three bd1f822 pom 1.1
+* branch-two   844ce04 [origin/branch-two] ticket games
+  master       4a3f18e [origin/master] master pom 1.3
+bash-3.1$ git help push
+Launching default browser to display HTML ...
+bash-3.1$
